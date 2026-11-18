@@ -1,1 +1,336 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautyGlow - Toko Kosmetik</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff7fa;
+            color: #333;
+        }
+
+        header {
+            background: #e85d91;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #ffc4d8, #ffe5ed);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            color: #a52f62;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .hero button {
+            background: #e85d91;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .produk {
+            padding: 50px 7%;
+            text-align: center;
+        }
+
+        .produk h2 {
+            color: #c13e72;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px #00000015;
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin: 15px 0 8px;
+            color: #a52f62;
+        }
+
+        .harga {
+            color: #e85d91;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .card button {
+            background: #e85d91;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .card button:hover,
+        .hero button:hover {
+            background: #bd356d;
+        }
+
+        .keranjang {
+            background: white;
+            margin: 30px 7%;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .keranjang h2 {
+            color: #c13e72;
+            margin-bottom: 15px;
+        }
+
+        .keranjang button {
+            background: #e85d91;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #e85d91;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>BeautyGlow</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#produk">Produk</a>
+            <a href="#keranjang">Keranjang</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Welcome to BeautyGlow</h2>
+        <p>Temukan Kecantikanmu Bersama Produk Kosmetik Terbaik!</p>
+        <button onclick="location.href='#produk'">
+            Belanja Sekarang
+        </button>
+    </section>
+
+    <section class="produk" id="produk">
+        <h2>Produk Kosmetik Kami</h2>
+
+        <div class="container">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500" alt="Lipstik">
+                <h3>Lipstik Matte</h3>
+                <p>Lipstik dengan warna cantik dan tahan lama.</p>
+                <p class="harga">Rp45.000</p>
+                <button onclick="tambah('Lipstik Matte',45000)">
+                    Tambah Keranjang
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=500" alt="Skincare">
+                <h3>Skincare Serum</h3>
+                <p>Serum untuk membantu merawat kulit wajah.</p>
+                <p class="harga">Rp75.000</p>
+                <button onclick="tambah('Skincare Serum',75000)">
+                    Tambah Keranjang
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500" alt="Bedak">
+                <h3>Bedak Wajah</h3>
+                <p>Bedak ringan untuk tampilan natural.</p>
+                <p class="harga">Rp55.000</p>
+                <button onclick="tambah('Bedak Wajah',55000)">
+                    Tambah Keranjang
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500" alt="Makeup">
+                <h3>Makeup Set</h3>
+                <p>Paket makeup untuk kecantikan sehari-hari.</p>
+                <p class="harga">Rp120.000</p>
+                <button onclick="tambah('Makeup Set',120000)">
+                    Tambah Keranjang
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="keranjang" id="keranjang">
+        <h2>Keranjang Belanja 🛒</h2>
+
+        <div id="daftar">
+            Belum ada produk.
+        </div>
+
+        <h3 id="total">Total: Rp0</h3>
+
+        <button onclick="checkout()">
+            Checkout WhatsApp
+        </button>
+    </section>
+
+    <footer id="kontak">
+        <h3>BeautyGlow Cosmetics</h3>
+        <p>Email: beautyglow@gmail.com</p>
+        <p>Instagram: @beautyglow</p>
+        <p>© 2026 BeautyGlow. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let keranjang = [];
+
+        function tambah(nama, harga) {
+            let produk = keranjang.find(p => p.nama === nama);
+
+            if (produk) {
+                produk.jumlah++;
+            } else {
+                keranjang.push({
+                    nama: nama,
+                    harga: harga,
+                    jumlah: 1
+                });
+            }
+
+            tampilkan();
+            alert(nama + " berhasil ditambahkan!");
+        }
+
+        function tampilkan() {
+            let daftar = document.getElementById("daftar");
+            let total = 0;
+
+            daftar.innerHTML = "";
+
+            keranjang.forEach((p, index) => {
+                total += p.harga * p.jumlah;
+
+                daftar.innerHTML += `
+                    <p>
+                        ${p.nama} -
+                        Rp${p.harga.toLocaleString("id-ID")}
+                        x ${p.jumlah}
+                        <button onclick="hapus(${index})">
+                            Hapus
+                        </button>
+                    </p>
+                `;
+            });
+
+            if (keranjang.length === 0) {
+                daftar.innerHTML = "Belum ada produk.";
+            }
+
+            document.getElementById("total").innerText =
+                "Total: Rp" + total.toLocaleString("id-ID");
+        }
+
+        function hapus(index) {
+            keranjang.splice(index, 1);
+            tampilkan();
+        }
+
+        function checkout() {
+            if (keranjang.length === 0) {
+                alert("Keranjang masih kosong!");
+                return;
+            }
+
+            let pesan = "Halo BeautyGlow, saya ingin memesan:%0A";
+            let total = 0;
+
+            keranjang.forEach(p => {
+                pesan += "- " + p.nama +
+                    " x " + p.jumlah +
+                    " = Rp" +
+                    (p.harga * p.jumlah).toLocaleString("id-ID") +
+                    "%0A";
+
+                total += p.harga * p.jumlah;
+            });
+
+            pesan += "%0ATotal: Rp" +
+                total.toLocaleString("id-ID");
+
+            // Ganti nomor berikut dengan nomor WhatsApp toko
+            let nomor = "6281234567890";
+
+            window.open(
+                "https://wa.me/" + nomor + "?text=" + pesan,
+                "_blank"
+            );
+        }
+    </script>
+
+</body>
+</html>
+
